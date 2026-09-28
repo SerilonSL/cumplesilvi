@@ -1,0 +1,303 @@
+@font-face {
+    font-family: 'StarBorn';
+    src: url(fuentes/Starborn.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Super Waffles';
+    src: url(fuentes/Super\ Waffles.ttf) format('truetype');
+}
+
+/* Modificadas para mantener su posición absoluta pero sin estorbar */
+.torta {
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-top: -10px;
+    margin-left: 360px;
+    transform: rotate(-25deg);
+}
+
+.torta1 {
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-top: -105px;
+    margin-left: 1050px;
+    transform: rotate(25deg);
+}
+
+body{
+    background-color: rgb(111, 255, 111);
+}
+
+.pagina {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -0.01%;
+    left: -0.01%;
+}
+
+.titulo {
+    text-align: center; 
+    font-family: 'StarBorn';
+    font-size: 25px;
+    color: white;
+    text-shadow: 
+        -4px -4px 0 #000,  0px -4px 0 #000,  4px -4px 0 #000,
+        -4px  0px 0 #000,                    4px  0px 0 #000,
+        -4px  4px 0 #000,  0px  4px 0 #000,  4px  4px 0 #000;
+}
+
+.cubo_fondo {
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+    background-color: pink;
+    left:17%;
+    margin-top: -3.3%;
+    border: 5px;
+    border-radius: 15px;
+}
+
+/* Se convierte en un contenedor flexible para ordenar tus 10 regalos */
+.cubo {
+    position: absolute;
+    width: 985px;
+    height: 485px;
+    background-color: rgb(255, 172, 186);
+    left:17.5%;
+    top: 18.5%;
+    border: 5px;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tapa {
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+    background-color: rgb(255, 188, 200);
+    margin-top: -3.3%;
+    left:17%;
+    border: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 2;
+}
+
+.moño{
+    position: absolute;
+    display: block;
+    width: 500px;
+    height: 500px;
+    cursor: pointer; 
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.oculto {
+    opacity: 0 !important;            
+    pointer-events: none !important; 
+    transform: translateY(-50px);
+}
+
+.regalos h2{
+    position: relative;
+    text-align: center;
+    font-family: 'StarBorn';
+    font-size: 25px;
+    top: 15px;
+    color: rgb(255, 209, 209);
+    text-shadow: 
+        -2px -2px 0 red,  0px -2px 0 red,  2px -2px 0 red,
+        -2px  0px 0 red,                    2px  0px 0 red,
+        -2px  2px 0 red,  0px  2px 0 red,  2px  2px 0 red;
+    z-index: 1;
+}
+
+/* ==========================================
+   NUEVOS ESTILOS PARA LOS MINI CUADRADOS Y MODAL
+   ========================================== */
+
+/* Cada uno de los 10 regalitos internos */
+.mini-cuadrado {
+    width: 140px;
+    height: 140px;
+    background-color: #ff477e;
+    color: rgb(255, 255, 255);
+    font-family: 'StarBorn', sans-serif;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+    z-index: 0; /* Importante para que se puedan clickear al quitar la tapa */
+}
+
+.mini-cuadrado:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Estructura de la ventana emergente */
+.ventana-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Siempre al frente de todo */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Estado de visualización de la ventana modal */
+.mostrar-modal {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Contenedor del contenido del modal */
+.modal-contenido {
+    background-color: rgb(217, 255, 207);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    max-width: 400px;
+    width: 80%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Tamaño y propiedades de la foto sorpresa del modal */
+.modal-contenido img {
+    width: 100%;
+    max-height: 250px;
+    max-width: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    overflow: hidden; 
+}
+
+/* Texto descriptivo de la sorpresa */
+.modal-contenido p {
+    font-family: 'Super Waffles', sans-serif;
+    font-size: 20px;
+    color: black;
+    margin: 0;
+}
+
+/* El botón de cerrar (X) */
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #aaa;
+    line-height: 1;
+}
+
+.cerrar-modal:hover {
+    color: black;
+}
+
+.boton-sorpresa {
+    position: fixed !important;
+    bottom: 30px !important;
+    left: 50% !important;
+    transform: translate(-50%, 40px) !important; /* Empieza un poco más abajo */
+    background-color: #ff0055 !important;
+    color: white !important;
+    border: none !important;
+    padding: 15px 35px !important;
+    font-family: 'StarBorn', sans-serif !important;
+    font-size: 22px !important;
+    border-radius: 50px !important;
+    cursor: pointer !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.6s ease, transform 0.6s ease !important;
+    z-index: 99999 !important; /* Al frente de absolutamente todo */
+}
+
+/* Clase que activa JavaScript al llegar a 10 */
+.boton-sorpresa.activar-boton {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translate(-50%, 0) !important; /* Sube suavemente a su posición */
+    animation: pulsoRegalo 1.5s infinite !important;
+}
+
+@keyframes pulsoRegalo {
+    0% { transform: translate(-50%, 0) scale(1); }
+    50% { transform: translate(-50%, 0) scale(1.08); }
+    100% { transform: translate(-50%, 0) scale(1); }
+}
+
+/* El regalo final se dibuja desde el principio para evitar problemas del navegador */
+.regalo-final {
+    display: flex !important;
+    width: 200px;
+    height: 140px;
+    background-color: #ff0055;
+    color: white;
+    font-family: 'StarBorn', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 5;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Estilo mientras esté bloqueado (grisáceo y sin responder clics) */
+.regalo-final.bloqueado {
+    background-color: #bbbbbb !important;
+    color: #ffffff !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+    box-shadow: none;
+    z-index: 1;
+}
+
+/* Animación cuando se desbloquea al leer los 10 */
+.regalo-final:not(.bloqueado) {
+    animation: pulsoFinal 1.5s infinite;
+}
+
+@keyframes pulsoFinal {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); background-color: #ff3377; }
+    100% { transform: scale(1); }
+}
+
+/* Clase que se activa mediante JavaScript al hacer clic */
+.mini-cuadrado.leido {
+    background-color: #7c0489 !important;
+    opacity: 0.8;
+}

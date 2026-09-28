@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cumple Silvi</title>
+    <link rel="icon" type="image/x-icon" href="img/corazon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pagina">
+        <div class="titulo">
+            <img src="img/torta.webp" alt="torta" class="torta">
+            <h1>FELIZ CUMPLEAÑOS</h1>
+            <img src="img/torta1.webp" alt="torta" class="torta1">
+        </div>
+        
+        <div class="regalos">
+            <h2>10 COSAS QUE ADORO DE TI</h2>
+        </div>
+        <div class="cubo_fondo"></div>
+        
+        <div class="cubo">
+            <div class="mini-cuadrado" data-id="1" data-texto="!Tus ojitos, adoro tus ojos, son tan lindos y llenos de vida que no podria imaginarme un dia sin verlos, me gusta imaginar que me estas mirando y sentir que estoy al frente tuyo¡" data-img="img/ojo.png">1</div>
+            <div class="mini-cuadrado" data-id="2" data-texto="¡Tu voz, me encanta cada audio que me mandas, me hace sentir que estas aqui, que te tengo cerca, siempre cierro los ojos para imaginarme que te tengo a mi lado, hablandome con esa voz amorosa que me encanta!" data-img="img/voz.jpg">2</div>
+            <div class="mini-cuadrado" data-id="3" data-texto="¡Tu pelo, es hermoso el como se ve, siempre que te veo en una foto, lo que más me llama es tu pelo, siempre he tenido una fascinación por los peinados lindos y cuando te veo siento que encontre lo más bello del mundo, me encanta el como se ve en todos tus estilos!" data-img="img/pelito.png">3</div>
+            <div class="mini-cuadrado" data-id="4" data-texto="¡Tu sonrisa, te ves preciosa cada que sonries, no puedo no sonreir cada que te veo hacerlo, me encanta como te ves, me encanta como iluminas todo solo con sonreir, me encantaria verte haciendolo y saber que soy motivo de esa sonrisa, simeplemente te ves preciosa cada que lo haces!" data-img="img/sonrisa.png">4</div>
+            <div class="mini-cuadrado" data-id="5" data-texto="¡Tu humor, me hace feliz el como siempre logras sacarme una sonrisa con algun mensajito o un sticker tonto, disfruto cada cosa que me dices y el como me haces reir cada que me hablas!" data-img="img/humor.png">5</div>
+            <div class="mini-cuadrado" data-id="6" data-texto="¡Tu rostro, se que siempre te digo que me pareces hermosa, pero es que no puedo evitarlo, no se que tienes, si seran tus ojos, tus pestañas, tus cachetitos o la mezcla de todo eso!" data-img="img/rostro.png">6</div>
+            <div class="mini-cuadrado" data-id="7" data-texto="!Tu con lentes, cuando creia que no podias ser más linda, te veo con lentes, simplemente me encantas aun más, no se que tienes que cada que te veo, quiero verte aun más, me encantaria estar al frente tuyo y ver lo hermosa que te ves todo el tiempo!" data-img="img/lentes.png">7</div>
+            <div class="mini-cuadrado" data-id="8" data-texto="¡Tu estilo, yo pense que solo me gustaba un tipo de vestimenta, pero cuando te veo descubro que la cosa no era el tipo de ropa, sino la persona que la viste, pq cada que te veo, encuentro un nuevo outfit favorito, me encantaria acompañarte a comprar, para ver como te queda la ropa y ser el primero que te ve!" data-img="img/ropa.png">8</div>
+            <div class="mini-cuadrado" data-id="9" data-texto="¡Tus notitas, siempre me pregunto que nueva cosa pondras, yo no pongo muchas notas, pero cada que subes una, se que sera algo interesante, ya sea una canción, una opinión, o solo una tonterita, pero me encanta ver que subes, cada cosa que haces la disfruto¡" data-img="img/nota.png">9</div>
+            <div class="mini-cuadrado" data-id="10" data-texto="¡Tu cariño, cada que me dices que me quieres, que me adoras, cada que me lanzas un beso, cada que dices que algo que hago te parece lindo, cada que me dices lindo a mi, adoro cada cosa que me dices, cada muestra de afecto que me das me hace sonreir como tonto, y eso es señal que de verdad me encantas!" data-img="img/cariño.png">10</div>
+            
+            <!-- El regalo final ahora inicia bloqueado visualmente -->
+            <div id="boton-final" class="regalo-final bloqueado" data-texto="¡Tú, no hay nada que adore más que a ti, me encantan esas partes de ti, pero todo te conforma, conforma a la niña que me encanta, la niña que me hace feliz, la niña que me tiene loco, más de una vez quisiera usar una palabra más fuerte que un te adoro, pero no me siento listo pq asi sentiria que no te puedo soltar, pero bueno, te adoro corazón que tengas un feliz cumpleaños y que nunca olvides que eres mi mundo entero!❤️ (hice esto con ia pq no tenemos fotos juntas y queria poner algo lindo :c)" data-img="img/sorpresa.png">
+                🔒 REGALO BLOQUEADO
+            </div>
+        </div>
+        
+        <div class="tapa" id="tapa-desaparece">
+            <img src="img/moño.png" alt="moño" class="moño" id="moño-desaparece">
+        </div>
+    </div>
+
+    <div class="ventana-modal" id="mi-modal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal">&times;</span>
+            <img src="" alt="Imagen sorpresa" id="modal-img">
+            <p id="modal-texto"></p>
+        </div>
+    </div>
+    
+    <script>
+         const moño = document.getElementById('moño-desaparece');
+        const tapa = document.getElementById('tapa-desaparece');
+        const modal = document.getElementById('mi-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalTexto = document.getElementById('modal-texto');
+        const botonCerrar = document.querySelector('.cerrar-modal');
+        const cuadrados = document.querySelectorAll('.mini-cuadrado');
+        const botonFinal = document.getElementById('boton-final');
+
+        // Lista limpia para guardar los números que ya abrió
+        let listaRegalosLeidos = [];
+
+        const cerrarVentana = () => {
+            modal.classList.remove('mostrar-modal');
+        };
+
+        if (botonCerrar) botonCerrar.addEventListener('click', cerrarVentana);
+        window.addEventListener('click', (e) => { if (e.target === modal) cerrarVentana(); });
+
+        const abrirRegalo = () => {
+            if(moño) moño.classList.add('oculto');
+            if(tapa) tapa.classList.add('oculto');
+        };
+        if(moño) moño.addEventListener('click', abrirRegalo);
+        if(tapa) tapa.addEventListener('click', abrirRegalo);
+
+        cuadrados.forEach(cuadrado => {
+            cuadrado.addEventListener('click', () => {
+                modalTexto.textContent = cuadrado.getAttribute('data-texto') || '';
+                modalImg.src = cuadrado.getAttribute('data-img') || '';
+                modal.classList.add('mostrar-modal');
+
+                // Agregamos una clase CSS para cambiar el color visualmente
+                cuadrado.classList.add('leido');
+
+                // Obtenemos el texto numérico del recuadro
+                const numeroRegalo = cuadrado.textContent.trim();
+                
+                // Si este número no estaba en la lista, lo añadimos
+                if (!listaRegalosLeidos.includes(numeroRegalo)) {
+                    listaRegalosLeidos.push(numeroRegalo);
+                }
+
+                // Si la lista tiene guardados los 10 números, se activa la sorpresa final
+                if (listaRegalosLeidos.length === 10 && botonFinal) {
+                    botonFinal.classList.remove('bloqueado');
+                    botonFinal.innerHTML = "✨ ¡SORPRESA FINAL! ❤️";
+                }
+            });
+        });
+
+        if (botonFinal) {
+            botonFinal.addEventListener('click', () => {
+                if (!botonFinal.classList.contains('bloqueado')) {
+                    modalTexto.textContent = botonFinal.getAttribute('data-texto') || '';
+                    modalImg.src = botonFinal.getAttribute('data-img') || '';
+                    modal.classList.add('mostrar-modal');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
