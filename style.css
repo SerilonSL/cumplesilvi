@@ -293,14 +293,15 @@ body{
     opacity: 0.8;
 }
 
+/* ==========================================
+   MÉTODO RESPONSIVO DEFINITIVO PARA CELULARES
+   ========================================== */
 @media screen and (max-width: 768px) {
-    /* Ajustes generales del cuerpo del documento en celular */
     body {
         padding: 15px 5px !important;
         box-sizing: border-box !important;
     }
 
-    /* Redimensionamos las letras para que quepan completas */
     .titulo {
         position: relative !important;
         width: 100% !important;
@@ -309,7 +310,6 @@ body{
         font-size: 14px !important; 
     }
 
-    /* Las tortas se anclan de forma fija y limpia a las esquinas del título */
     .torta {
         position: absolute !important;
         width: 40px !important;
@@ -330,7 +330,6 @@ body{
         margin-top: 0 !important;
     }
 
-    /* El subtítulo se separa orgánicamente de la caja */
     .regalos h2 {
         position: relative !important;
         width: 100% !important;
@@ -340,16 +339,13 @@ body{
         margin: 20px 0 10px 0 !important;
     }
 
-    /* 
-       ¡AQUÍ ESTÁ LA SOLUCIÓN! 
-       Forzamos a las 3 capas (Fondo, Cubo y Tapa) a usar el mismo molde idéntico
-    */
+    /* Forzamos a las 3 capas a tener exactamente el mismo molde simétrico */
     .cubo_fondo {
         position: absolute !important;
         width: 92vw !important;
-        height: 380px !important; /* Altura perfecta para la cuadrícula */
+        height: 380px !important; 
         left: 4vw !important;
-        top: 150px !important;   /* Posición vertical fija para las tres capas */
+        top: 150px !important;   
         margin-top: 0 !important;
     }
 
@@ -358,7 +354,7 @@ body{
         width: 92vw !important;
         height: 380px !important;
         left: 4vw !important;
-        top: 150px !important;   /* Alineación exacta con el fondo */
+        top: 150px !important;   
         padding: 15px !important;
         gap: 10px !important; 
         display: flex !important;
@@ -373,11 +369,10 @@ body{
         width: 92vw !important;
         height: 380px !important;
         left: 4vw !important;
-        top: 150px !important;   /* Alineación exacta con el fondo */
+        top: 150px !important;   
         margin-top: 0 !important;
     }
 
-    /* Ajustamos el tamaño del moño para que encaje dentro de la tapa elástica */
     .moño {
         position: absolute !important;
         width: 100% !important;
@@ -387,15 +382,13 @@ body{
         object-fit: contain !important; 
     }
 
-    /* Los 10 cuadraditos se achican a un tamaño perfecto para pantallas móviles */
     .mini-cuadrado {
-        width: 65px !important;
-        height: 65px !important;
+        width: 62px !important; /* Un poco más pequeños para evitar cualquier desborde */
+        height: 62px !important;
         font-size: 16px !important;
         border-radius: 8px !important;
     }
 
-    /* El regalo final se adapta a la cuadrícula de forma horizontal abajo del todo */
     .regalo-final {
         width: 85% !important;
         height: 48px !important;
@@ -403,7 +396,6 @@ body{
         margin-top: 5px !important;
     }
 
-    /* Adaptación de la ventana de texto emergente */
     .modal-contenido {
         width: 85% !important;
         max-height: 80vh !important;
