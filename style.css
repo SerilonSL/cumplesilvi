@@ -310,16 +310,19 @@ body{
         font-size: 14px !important; 
     }
 
-        /* Bajamos las tortas para alinearlas perfectamente con el centro de las letras */
+    /* Ajuste de alineación central absoluta para las tortas */
     .torta {
         position: relative !important;
         display: inline-block !important;
         width: 32px !important;  
         height: 32px !important;
-        top: 6px !important;    /* Ajustado: aumenta este número si quieres que bajen más */
+        top: 0 !important;
+        vertical-align: middle !important; /* Las alinea al centro del texto */
+        margin-top: 8px !important;        /* Las empuja físicamente hacia abajo */
+        margin-right: 8px !important;      /* Separa de las letras */
+        margin-left: 0 !important;
         left: unset !important;
         right: unset !important;
-        margin: 0 8px 0 0 !important; 
         transform: rotate(-25deg) !important;
     }
 
@@ -328,10 +331,13 @@ body{
         display: inline-block !important;
         width: 32px !important;  
         height: 32px !important;
-        top: 6px !important;    /* Ajustado: aumenta este número si quieres que bajen más */
+        top: 0 !important;
+        vertical-align: middle !important; /* Las alinea al centro del texto */
+        margin-top: 8px !important;        /* Las empuja físicamente hacia abajo */
+        margin-left: 8px !important;       /* Separa de las letras */
+        margin-right: 0 !important;
         left: unset !important;
         right: unset !important;
-        margin: 0 0 0 8px !important; 
         transform: rotate(25deg) !important;
     }
 
