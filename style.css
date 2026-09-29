@@ -1,10 +1,4 @@
-Entiendo. Si el diseño sigue viéndose mal o desordenado, probablemente se deba a cómo el navegador está calculando el ancho y los márgenes absolutos en tu monitor (ya que dependemos de porcentajes y posiciones fijas como left: 17%).
 
-Para solucionarlo de raíz y garantizar que la caja y los 10 regalos queden perfectamente centrados y ordenados (de 5 en 5) sin importar el tamaño de la pantalla grande, vamos a cambiar el diseño de la caja a Flexbox centrado para su posicionamiento, eliminando los porcentajes fijos que suelen desacomodar todo.
-
-Aquí tienes el CSS corregido (manteniendo intacto tu bloque @media tal como pediste):
-
-CSS
 @font-face {
     font-family: 'StarBorn';
     src: url(fuentes/Starborn.ttf) format('truetype');
