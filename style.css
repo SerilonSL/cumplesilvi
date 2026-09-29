@@ -48,46 +48,47 @@ body{
     color: white;
     text-shadow: 
         -4px -4px 0 #000,  0px -4px 0 #000,  4px -4px 0 #000,
-        -4px  0px 0 #000,                    4px  0px 0 #000,
+        -4px  0px 0 #000,                     4px  0px 0 #000,
         -4px  4px 0 #000,  0px  4px 0 #000,  4px  4px 0 #000;
 }
 
 .cubo_fondo {
     position: absolute;
-    width: 1000px;
-    height: 500px;
+    width: 1050px;
+    height: 520px;
     background-color: pink;
-    left:17%;
+    left: 15%;
     margin-top: -3.3%;
     border: 5px;
     border-radius: 15px;
 }
 
-/* Se convierte en un contenedor flexible para ordenar tus 10 regalos */
+/* Se convierte en un contenedor flexible para ordenar tus regalos */
 .cubo {
     position: absolute;
-    width: 985px;
-    height: 485px;
+    width: 1035px;
+    height: 505px;
     background-color: rgb(255, 172, 186);
-    left:17.5%;
+    left: 15.25%;
     top: 17.5%;
     border: 5px;
     border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     align-content: center;
     box-sizing: border-box;
+    padding: 20px;
 }
 
 .tapa {
     position: absolute;
-    width: 1000px;
-    height: 500px;
+    width: 1050px;
+    height: 520px;
     background-color: rgb(255, 188, 200);
     margin-top: -3.3%;
-    left:17%;
+    left: 15%;
     border: 5px;
     border-radius: 15px;
     cursor: pointer;
@@ -119,7 +120,7 @@ body{
     color: rgb(255, 209, 209);
     text-shadow: 
         -2px -2px 0 red,  0px -2px 0 red,  2px -2px 0 red,
-        -2px  0px 0 red,                    2px  0px 0 red,
+        -2px  0px 0 red,                   2px  0px 0 red,
         -2px  2px 0 red,  0px  2px 0 red,  2px  2px 0 red;
     z-index: 1;
 }
@@ -128,14 +129,14 @@ body{
    NUEVOS ESTILOS PARA LOS MINI CUADRADOS Y MODAL
    ========================================== */
 
-/* Cada uno de los 10 regalitos internos */
+/* Cada uno de los regalitos internos (ajustados para que entren perfectamente) */
 .mini-cuadrado {
-    width: 140px;
-    height: 140px;
+    width: 115px;
+    height: 115px;
     background-color: #ff477e;
     color: rgb(255, 255, 255);
     font-family: 'StarBorn', sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,15 +254,15 @@ body{
     100% { transform: translate(-50%, 0) scale(1); }
 }
 
-/* El regalo final se dibuja desde el principio para evitar problemas del navegador */
+/* El regalo final adaptado al nuevo espacio */
 .regalo-final {
     display: flex !important;
-    width: 200px;
-    height: 140px;
+    width: 115px;
+    height: 115px;
     background-color: #ff0055;
     color: white;
     font-family: 'StarBorn', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     align-items: center;
     justify-content: center;
