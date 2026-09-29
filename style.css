@@ -353,7 +353,7 @@ body{
         left: 4vw !important;
         top: 175px !important;      
         margin: 0 !important;
-        z-index: 10 !important;     
+        z-index: 1 !important;     
     }
 
     /* UNIFICACIÓN MILIMÉTRICA DE LAS TRES CAPAS EN EL CELULAR */
