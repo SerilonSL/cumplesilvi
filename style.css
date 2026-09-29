@@ -62,7 +62,7 @@ body{
     border-radius: 15px;
 }
 
-/* Contenedor optimizado para distribuir los elementos de forma uniforme */
+/* Contenedor cambiado a Grid para forzar filas exactas y simétricas */
 .cubo {
     position: absolute;
     width: 980px;
@@ -71,13 +71,14 @@ body{
     left: 18%;
     top: 17.5%;
     border-radius: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    align-content: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    justify-items: center;
+    align-items: center;
     box-sizing: border-box;
-    padding: 20px 40px;
+    padding: 20px;
 }
 
 .tapa {
