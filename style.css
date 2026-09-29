@@ -1,3 +1,10 @@
+Entiendo. Si el diseño sigue viéndose mal o desordenado, probablemente se deba a cómo el navegador está calculando el ancho y los márgenes absolutos en tu monitor (ya que dependemos de porcentajes y posiciones fijas como left: 17%).
+
+Para solucionarlo de raíz y garantizar que la caja y los 10 regalos queden perfectamente centrados y ordenados (de 5 en 5) sin importar el tamaño de la pantalla grande, vamos a cambiar el diseño de la caja a Flexbox centrado para su posicionamiento, eliminando los porcentajes fijos que suelen desacomodar todo.
+
+Aquí tienes el CSS corregido (manteniendo intacto tu bloque @media tal como pediste):
+
+CSS
 @font-face {
     font-family: 'StarBorn';
     src: url(fuentes/Starborn.ttf) format('truetype');
@@ -31,14 +38,20 @@
 
 body{
     background-color: rgb(111, 255, 111);
+    margin: 0;
+    padding: 0;
 }
 
 .pagina {
-    position: absolute;
-    height: 100%;
+    position: relative;
+    min-height: 100vh;
     width: 100%;
-    top: -0.01%;
-    left: -0.01%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding-top: 20px;
 }
 
 .titulo {
@@ -46,32 +59,53 @@ body{
     font-family: 'StarBorn';
     font-size: 25px;
     color: white;
+    margin-bottom: 25px;
     text-shadow: 
         -4px -4px 0 #000,  0px -4px 0 #000,  4px -4px 0 #000,
         -4px  0px 0 #000,                     4px  0px 0 #000,
         -4px  4px 0 #000,  0px  4px 0 #000,  4px  4px 0 #000;
 }
 
+/* Contenedor general para alinear título secundario y cajas de forma limpia */
+.regalos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 1000px;
+}
+
+.regalos h2{
+    position: relative;
+    text-align: center;
+    font-family: 'StarBorn';
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: rgb(255, 209, 209);
+    text-shadow: 
+        -2px -2px 0 red,  0px -2px 0 red,  2px -2px 0 red,
+        -2px  0px 0 red,                   2px  0px 0 red,
+        -2px  2px 0 red,  0px  2px 0 red,  2px  2px 0 red;
+    z-index: 1;
+}
+
 .cubo_fondo {
-    position: absolute;
-    width: 1050px;
-    height: 520px;
+    position: relative;
+    width: 1000px;
+    height: 500px;
     background-color: pink;
-    left: 15%;
-    margin-top: -3.3%;
-    border: 5px;
+    border: 5px solid pink; /* Asegura que el borde no colapse mal */
     border-radius: 15px;
 }
 
-/* Se convierte en un contenedor flexible para ordenar tus regalos */
+/* Contenedor flexible para ordenar perfectamente los regalos en filas de 5 */
 .cubo {
     position: absolute;
-    width: 1035px;
-    height: 505px;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 500px;
     background-color: rgb(255, 172, 186);
-    left: 15.25%;
-    top: 17.5%;
-    border: 5px;
     border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -84,12 +118,11 @@ body{
 
 .tapa {
     position: absolute;
-    width: 1050px;
-    height: 520px;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 500px;
     background-color: rgb(255, 188, 200);
-    margin-top: -3.3%;
-    left: 15%;
-    border: 5px;
     border-radius: 15px;
     cursor: pointer;
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -111,28 +144,14 @@ body{
     transform: translateY(-50px);
 }
 
-.regalos h2{
-    position: relative;
-    text-align: center;
-    font-family: 'StarBorn';
-    font-size: 25px;
-    top: 15px;
-    color: rgb(255, 209, 209);
-    text-shadow: 
-        -2px -2px 0 red,  0px -2px 0 red,  2px -2px 0 red,
-        -2px  0px 0 red,                   2px  0px 0 red,
-        -2px  2px 0 red,  0px  2px 0 red,  2px  2px 0 red;
-    z-index: 1;
-}
-
 /* ==========================================
    NUEVOS ESTILOS PARA LOS MINI CUADRADOS Y MODAL
    ========================================== */
 
-/* Cada uno de los regalitos internos (ajustados para que entren perfectamente) */
+/* Cada uno de los 10 regalitos internos con tamaño exacto para filas de 5 */
 .mini-cuadrado {
-    width: 115px;
-    height: 115px;
+    width: 165px;
+    height: 125px;
     background-color: #ff477e;
     color: rgb(255, 255, 255);
     font-family: 'StarBorn', sans-serif;
@@ -148,7 +167,7 @@ body{
 }
 
 .mini-cuadrado:hover {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.05) rotate(3deg);
 }
 
 /* Estructura de la ventana emergente */
@@ -254,15 +273,15 @@ body{
     100% { transform: translate(-50%, 0) scale(1); }
 }
 
-/* El regalo final adaptado al nuevo espacio */
+/* El regalo final adaptado exactamente al espacio de un mini cuadrado */
 .regalo-final {
     display: flex !important;
-    width: 115px;
-    height: 115px;
+    width: 165px;
+    height: 125px;
     background-color: #ff0055;
     color: white;
     font-family: 'StarBorn', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
     align-items: center;
     justify-content: center;
