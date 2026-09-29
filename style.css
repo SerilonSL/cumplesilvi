@@ -314,20 +314,20 @@ body{
         position: absolute !important;
         width: 40px !important;
         height: 40px !important;
-        top: -5px !important;
+        top: 0px !important;
         left: 10px !important;
         margin-left: 0 !important;
-        margin-top: 50px !important;
+        margin-top: 0px !important;
     }
 
     .torta1 {
         position: absolute !important;
         width: 40px !important;
         height: 40px !important;
-        top: -5px !important;
+        top: 0px !important;
         right: 10px !important;
         margin-left: 0 !important;
-        margin-top: 50px !important;
+        margin-top: 0px !important;
     }
 
     .regalos h2 {
