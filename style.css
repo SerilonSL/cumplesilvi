@@ -70,7 +70,7 @@ body{
     height: 485px;
     background-color: rgb(255, 172, 186);
     left:17.5%;
-    top: 18.5%;
+    top: 17.8%;
     border: 5px;
     border-radius: 15px;
     display: flex;
@@ -300,4 +300,86 @@ body{
 .mini-cuadrado.leido {
     background-color: #7c0489 !important;
     opacity: 0.8;
+}
+
+/* ==========================================
+   MÉTODO INVISIBLE ADAPTATIVO PARA CELULARES
+   ========================================== */
+@media screen and (max-width: 768px) {
+    .titulo {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    
+    .regalos h2 {
+        font-size: 15px;
+        top: 0px;
+        margin-bottom: 25px;
+    }
+
+    .torta {
+        width: 45px;
+        height: 45px;
+        margin-top: -5px;
+        margin-left: 10px;
+    }
+
+    .torta1 {
+        width: 45px;
+        height: 45px;
+        margin-top: -55px;
+        margin-left: unset;
+        right: 10px;
+    }
+
+    .cubo_fondo, .tapa {
+        width: 92% !important;
+        height: auto !important;
+        min-height: 420px;
+        left: 4% !important;
+        margin-top: 0%;
+    }
+
+    .cubo {
+        width: 90% !important;
+        height: auto !important;
+        min-height: 405px;
+        left: 5% !important;
+        top: 130px !important;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .moño {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 380px;
+    }
+
+    .mini-cuadrado {
+        width: 70px !important;
+        height: 70px !important;
+        font-size: 16px !important;
+        border-radius: 8px;
+    }
+
+    .regalo-final {
+        width: 85% !important;
+        height: 55px !important;
+        font-size: 11px !important;
+    }
+
+    .modal-contenido {
+        width: 85%;
+        padding: 15px;
+    }
+    
+    .modal-contenido img {
+        max-height: 160px;
+        max-width: 160px;
+    }
+    
+    .modal-contenido p {
+        font-size: 16px;
+    }
 }
