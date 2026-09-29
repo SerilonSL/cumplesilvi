@@ -310,24 +310,29 @@ body{
         font-size: 14px !important; 
     }
 
+        /* Las tortas se vuelven relativas y se acoplan al flujo natural del texto */
     .torta {
-        position: absolute !important;
-        width: 40px !important;
-        height: 40px !important;
-        top: 0px !important;
-        left: 10px !important;
-        margin-left: 0 !important;
-        margin-top: 0px !important;
+        position: relative !important;
+        display: inline-block !important;
+        width: 32px !important;  /* Tamaño ideal para que no tapen las letras */
+        height: 32px !important;
+        top: -2px !important;    /* Ajuste fino vertical para centrarlas con la fuente */
+        left: unset !important;
+        right: unset !important;
+        margin: 0 8px 0 0 !important; /* Separa la torta izquierda de la palabra FELIZ */
+        transform: rotate(-25deg) !important;
     }
 
     .torta1 {
-        position: absolute !important;
-        width: 40px !important;
-        height: 40px !important;
-        top: 0px !important;
-        right: 10px !important;
-        margin-left: 0 !important;
-        margin-top: 0px !important;
+        position: relative !important;
+        display: inline-block !important;
+        width: 32px !important;  /* Tamaño ideal */
+        height: 32px !important;
+        top: -2px !important;    /* Ajuste fino vertical */
+        left: unset !important;
+        right: unset !important;
+        margin: 0 0 0 8px !important; /* Separa la torta derecha de la palabra CUMPLEAÑOS */
+        transform: rotate(25deg) !important;
     }
 
     .regalos h2 {
