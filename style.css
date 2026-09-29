@@ -293,9 +293,6 @@ body{
     opacity: 0.8;
 }
 
-/* ==========================================
-   MÉTODO RESPONSIVO DEFINITIVO PARA CELULARES
-   ========================================== */
 @media screen and (max-width: 768px) {
     /* Ajustes generales del cuerpo del documento en celular */
     body {
@@ -343,35 +340,40 @@ body{
         margin: 20px 0 10px 0 !important;
     }
 
-    /* REDIMENSIÓN DE LA CAJA: Cambiamos 1000px por anchos elásticos usando vw (Ancho de Pantalla) */
+    /* 
+       ¡AQUÍ ESTÁ LA SOLUCIÓN! 
+       Forzamos a las 3 capas (Fondo, Cubo y Tapa) a usar el mismo molde idéntico
+    */
     .cubo_fondo {
-        position: relative !important;
+        position: absolute !important;
         width: 92vw !important;
-        height: 470px !important; /* Altura ideal para albergar los 11 elementos */
-        left: auto !important;
-        margin-top: 5px !important;
+        height: 380px !important; /* Altura perfecta para la cuadrícula */
+        left: 4vw !important;
+        top: 150px !important;   /* Posición vertical fija para las tres capas */
+        margin-top: 0 !important;
     }
 
     .cubo {
         position: absolute !important;
         width: 92vw !important;
-        height: 470px !important;
+        height: 380px !important;
         left: 4vw !important;
-        top: 125px !important; /* Lo alinea exactamente sobre la caja base */
-        padding: 12px !important;
-        gap: 10px !important; /* Separación compacta para celular */
+        top: 150px !important;   /* Alineación exacta con el fondo */
+        padding: 15px !important;
+        gap: 10px !important; 
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
         align-content: center !important;
+        box-sizing: border-box !important;
     }
 
     .tapa {
         position: absolute !important;
         width: 92vw !important;
-        height: 470px !important;
+        height: 380px !important;
         left: 4vw !important;
-        top: 125px !important;
+        top: 150px !important;   /* Alineación exacta con el fondo */
         margin-top: 0 !important;
     }
 
@@ -382,7 +384,7 @@ body{
         height: 100% !important;
         top: 0 !important;
         left: 0 !important;
-        object-fit: contain !important; /* Evita que la cinta se estire o deforma */
+        object-fit: contain !important; 
     }
 
     /* Los 10 cuadraditos se achican a un tamaño perfecto para pantallas móviles */
@@ -395,7 +397,7 @@ body{
 
     /* El regalo final se adapta a la cuadrícula de forma horizontal abajo del todo */
     .regalo-final {
-        width: 82% !important;
+        width: 85% !important;
         height: 48px !important;
         font-size: 11px !important;
         margin-top: 5px !important;
