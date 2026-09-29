@@ -54,42 +54,39 @@ body{
 
 .cubo_fondo {
     position: absolute;
-    width: 1020px;
+    width: 980px;
     height: 500px;
     background-color: pink;
-    left: 17%;
+    left: 18%;
     margin-top: -3.3%;
-    border: 5px;
     border-radius: 15px;
 }
 
-/* Contenedor flexible ajustado para los 11 elementos */
+/* Contenedor optimizado para distribuir los elementos de forma uniforme */
 .cubo {
     position: absolute;
-    width: 1005px;
-    height: 485px;
+    width: 980px;
+    height: 500px;
     background-color: rgb(255, 172, 186);
-    left: 17.5%;
+    left: 18%;
     top: 17.5%;
-    border: 5px;
     border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 15px;
     justify-content: center;
     align-content: center;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 20px 40px;
 }
 
 .tapa {
     position: absolute;
-    width: 1020px;
+    width: 980px;
     height: 500px;
     background-color: rgb(255, 188, 200);
     margin-top: -3.3%;
-    left: 17%;
-    border: 5px;
+    left: 18%;
     border-radius: 15px;
     cursor: pointer;
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -130,8 +127,8 @@ body{
    ========================================== */
 
 .mini-cuadrado {
-    width: 145px;
-    height: 125px;
+    width: 135px;
+    height: 115px;
     background-color: #ff477e;
     color: rgb(255, 255, 255);
     font-family: 'StarBorn', sans-serif;
@@ -248,8 +245,8 @@ body{
 
 .regalo-final {
     display: flex !important;
-    width: 145px;
-    height: 125px;
+    width: 135px;
+    height: 115px;
     background-color: #ff0055;
     color: white;
     font-family: 'StarBorn', sans-serif;
