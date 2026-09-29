@@ -324,8 +324,8 @@ body{
     .torta {
         position: absolute !important;
         display: block !important;
-        width: 32px !important;  
-        height: 32px !important;
+        width: 40px !important;  
+        height: 40px !important;
         top: -5px !important;       
         left: -42px !important;     
         margin: 0 !important;
@@ -335,8 +335,8 @@ body{
     .torta1 {
         position: absolute !important;
         display: block !important;
-        width: 32px !important;  
-        height: 32px !important;
+        width: 40px !important;  
+        height: 40px !important;
         top: -5px !important;       
         right: -42px !important;    
         margin: 0 !important;
