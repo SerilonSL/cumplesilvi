@@ -306,18 +306,18 @@ body{
         position: relative !important;
         width: 100% !important;
         text-align: center !important;
-        margin-top: 15px !important;
+        margin-top: 45px !important; /* Dejamos espacio arriba para las tortas */
         font-size: 14px !important; 
     }
 
-       /* 1. Posicionamos las tortas de forma absoluta e independiente sobre el título */
+    /* Las tortas se posicionan arriba del título, centradas y ordenadas */
     .torta {
         position: absolute !important;
         display: block !important;
         width: 35px !important;  
         height: 35px !important;
-        top: -35px !important;    /* Las sube por encima de la palabra FELIZ */
-        left: 30% !important;     /* La centra hacia la izquierda */
+        top: -45px !important;   /* Suben por encima de las letras */
+        left: 28% !important;    /* Ajuste horizontal izquierdo */
         margin: 0 !important;
         transform: rotate(-15deg) !important;
     }
@@ -327,30 +327,33 @@ body{
         display: block !important;
         width: 35px !important;  
         height: 35px !important;
-        top: -35px !important;    /* Las sube por encima de la palabra CUMPLEAÑOS */
-        right: 30% !important;    /* La centra hacia la derecha */
+        top: -45px !important;   /* Suben por encima de las letras */
+        right: 28% !important;   /* Ajuste horizontal derecho */
         margin: 0 !important;
         transform: rotate(15deg) !important;
     }
 
-    /* 2. Corregimos el subtítulo para que no se encime con los regalos */
+    /* Separamos el subtítulo de forma limpia */
     .regalos h2 {
         position: relative !important;
         width: 100% !important;
         text-align: center !important;
         font-size: 14px !important;
         top: 0 !important;
-        margin-top: 30px !important;    /* Empuja el subtítulo hacia abajo para separarlo del título */
-        margin-bottom: 25px !important; /* ¡CLAVE! Empuja la caja rosa hacia abajo para que no tape el texto */
+        margin-top: 25px !important;
+        margin-bottom: 20px !important;
     }
 
-    /* Redimensionamos las 3 capas a una altura controlada de 380px para celular */
+    /* 
+       ¡AQUÍ ESTÁ EL TRUCO! 
+       Bajamos el 'top' de 150px a 185px para que la caja rosa se despegue del texto 
+    */
     .cubo_fondo {
         position: absolute !important;
         width: 92vw !important;
         height: 380px !important; 
         left: 4vw !important;
-        top: 150px !important;   
+        top: 185px !important;   /* Bajamos la caja */
         margin-top: 0 !important;
     }
 
@@ -359,7 +362,7 @@ body{
         width: 92vw !important;
         height: 380px !important;
         left: 4vw !important;
-        top: 150px !important;   
+        top: 185px !important;   /* Bajamos la caja en perfecta sincronía */
         padding: 15px !important;
         gap: 10px !important; 
         display: flex !important;
@@ -374,7 +377,7 @@ body{
         width: 92vw !important;
         height: 380px !important;
         left: 4vw !important;
-        top: 150px !important;   
+        top: 185px !important;   /* Bajamos la tapa en perfecta sincronía */
         margin-top: 0 !important;
     }
 
@@ -411,9 +414,5 @@ body{
     .modal-contenido img {
         max-height: 150px !important;
         max-width: 150px !important;
-    }
-    
-    .modal-contenido p {
-        font-size: 16px !important;
     }
 }
