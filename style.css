@@ -310,20 +310,18 @@ body{
         font-size: 14px !important; 
     }
 
-    /* Ajuste de alineación central absoluta para las tortas */
+        /* Forzamos el desplazamiento de las tortas hacia abajo */
     .torta {
         position: relative !important;
         display: inline-block !important;
         width: 32px !important;  
         height: 32px !important;
         top: 0 !important;
-        vertical-align: middle !important; /* Las alinea al centro del texto */
-        margin-top: 8px !important;        /* Las empuja físicamente hacia abajo */
-        margin-right: 8px !important;      /* Separa de las letras */
-        margin-left: 0 !important;
         left: unset !important;
         right: unset !important;
-        transform: rotate(-25deg) !important;
+        margin: 0 8px 0 0 !important; 
+        /* Rota la imagen y además la empuja 12 píxeles hacia abajo */
+        transform: rotate(-25deg) translateY(12px) !important; 
     }
 
     .torta1 {
@@ -332,15 +330,12 @@ body{
         width: 32px !important;  
         height: 32px !important;
         top: 0 !important;
-        vertical-align: middle !important; /* Las alinea al centro del texto */
-        margin-top: 8px !important;        /* Las empuja físicamente hacia abajo */
-        margin-left: 8px !important;       /* Separa de las letras */
-        margin-right: 0 !important;
         left: unset !important;
         right: unset !important;
-        transform: rotate(25deg) !important;
+        margin: 0 0 0 8px !important; 
+        /* Rota la imagen y además la empuja 12 píxeles hacia abajo */
+        transform: rotate(25deg) translateY(12px) !important; 
     }
-
 
     .regalos h2 {
         position: relative !important;
