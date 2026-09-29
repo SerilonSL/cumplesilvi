@@ -297,19 +297,6 @@ body{
    MÉTODO RESPONSIVO DEFINITIVO PARA CELULARES
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* 1. Contenedor general flexible (Organiza todo de arriba hacia abajo) */
-    .pagina {
-        position: relative !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: 100vh !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        padding: 20px 10px !important;
-        box-sizing: border-box !important;
-    }
 
     /* 2. El título elástico para que no choque con nada */
     .titulo {
