@@ -31,20 +31,14 @@
 
 body{
     background-color: rgb(111, 255, 111);
-    margin: 0;
-    padding: 0;
 }
 
 .pagina {
-    position: relative;
-    min-height: 100vh;
+    position: absolute;
+    height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    padding-top: 20px;
+    top: -0.01%;
+    left: -0.01%;
 }
 
 .titulo {
@@ -52,68 +46,50 @@ body{
     font-family: 'StarBorn';
     font-size: 25px;
     color: white;
-    margin-bottom: 25px;
     text-shadow: 
         -4px -4px 0 #000,  0px -4px 0 #000,  4px -4px 0 #000,
         -4px  0px 0 #000,                     4px  0px 0 #000,
         -4px  4px 0 #000,  0px  4px 0 #000,  4px  4px 0 #000;
 }
 
-.regalos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 1020px;
-}
-
-.regalos h2{
-    position: relative;
-    text-align: center;
-    font-family: 'StarBorn';
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: rgb(255, 209, 209);
-    text-shadow: 
-        -2px -2px 0 red,  0px -2px 0 red,  2px -2px 0 red,
-        -2px  0px 0 red,                   2px  0px 0 red,
-        -2px  2px 0 red,  0px  2px 0 red,  2px  2px 0 red;
-    z-index: 1;
-}
-
 .cubo_fondo {
-    position: relative;
+    position: absolute;
     width: 1020px;
     height: 500px;
     background-color: pink;
-    border: 5px solid pink;
+    left: 17%;
+    margin-top: -3.3%;
+    border: 5px;
     border-radius: 15px;
 }
 
+/* Contenedor flexible ajustado para los 11 elementos */
 .cubo {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 1020px;
-    height: 500px;
+    width: 1005px;
+    height: 485px;
     background-color: rgb(255, 172, 186);
+    left: 17.5%;
+    top: 17.5%;
+    border: 5px;
     border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
     align-content: center;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 10px;
 }
 
 .tapa {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 1020px;
     height: 500px;
     background-color: rgb(255, 188, 200);
+    margin-top: -3.3%;
+    left: 17%;
+    border: 5px;
     border-radius: 15px;
     cursor: pointer;
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -133,6 +109,20 @@ body{
     opacity: 0 !important;            
     pointer-events: none !important; 
     transform: translateY(-50px);
+}
+
+.regalos h2{
+    position: relative;
+    text-align: center;
+    font-family: 'StarBorn';
+    font-size: 25px;
+    top: 15px;
+    color: rgb(255, 209, 209);
+    text-shadow: 
+        -2px -2px 0 red,  0px -2px 0 red,  2px -2px 0 red,
+        -2px  0px 0 red,                   2px  0px 0 red,
+        -2px  2px 0 red,  0px  2px 0 red,  2px  2px 0 red;
+    z-index: 1;
 }
 
 /* ==========================================
@@ -157,7 +147,7 @@ body{
 }
 
 .mini-cuadrado:hover {
-    transform: scale(1.05) rotate(3deg);
+    transform: scale(1.1) rotate(5deg);
 }
 
 .ventana-modal {
@@ -309,24 +299,22 @@ body{
         box-sizing: border-box !important;
     }
 
-    /* TÍTULO EN DOS LÍNEAS CENTRADAS */
     .titulo {
         position: relative !important;
-        width: 200px !important;     /* Fuerza el salto de línea perfecto */
+        width: 200px !important;
         margin: 20px auto 0 auto !important;
         text-align: center !important;
         font-size: 14px !important; 
         line-height: 1.6 !important; 
     }
 
-    /* TORTAS ALINEADAS A LOS LADOS DE "FELIZ" */
     .torta {
         position: absolute !important;
         display: block !important;
         width: 40px !important;  
         height: 40px !important;
-        top: -5px !important;       
-        left: -42px !important;     
+        top: -5px !important;        
+        left: -42px !important;      
         margin: 0 !important;
         transform: rotate(-25deg) !important;
     }
@@ -336,13 +324,12 @@ body{
         display: block !important;
         width: 40px !important;  
         height: 40px !important;
-        top: -5px !important;       
-        right: -42px !important;    
+        top: -5px !important;        
+        right: -42px !important;     
         margin: 0 !important;
         transform: rotate(25deg) !important;
     }
 
-    /* TEXTO ROJO INTEGRADO DENTRO DE LA CAJA */
     .regalos h2 {
         position: absolute !important;
         width: 92vw !important;
@@ -350,18 +337,17 @@ body{
         font-family: 'StarBorn' !important;
         font-size: 12px !important;
         left: 4vw !important;
-        top: 175px !important;      
+        top: 175px !important;       
         margin: 0 !important;
         z-index: 1 !important;     
     }
 
-    /* UNIFICACIÓN MILIMÉTRICA DE LAS TRES CAPAS EN EL CELULAR */
     .cubo_fondo {
         position: absolute !important;
         width: 92vw !important;
         height: 400px !important;   
         left: 4vw !important;
-        top: 155px !important;      
+        top: 155px !important;       
         margin-top: 0 !important;
     }
 
@@ -370,7 +356,7 @@ body{
         width: 92vw !important;
         height: 400px !important;
         left: 4vw !important;
-        top: 155px !important;      
+        top: 155px !important;       
         padding: 55px 12px 12px 12px !important; 
         gap: 10px !important; 
         display: flex !important;
@@ -385,7 +371,7 @@ body{
         width: 92vw !important;
         height: 400px !important;
         left: 4vw !important;
-        top: 155px !important;      
+        top: 155px !important;       
         margin-top: 0 !important;
         z-index: 3 !important;
     }
@@ -399,7 +385,6 @@ body{
         object-fit: contain !important; 
     }
 
-    /* BOTONES DE REGALOS COMPACTOS */
     .mini-cuadrado {
         width: 62px !important;
         height: 62px !important;
