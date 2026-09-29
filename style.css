@@ -305,80 +305,109 @@ body{
    MÉTODO INVISIBLE ADAPTATIVO PARA CELULARES
    ========================================== */
 @media screen and (max-width: 768px) {
-    .titulo {
-        font-size: 16px;
-        margin-top: 20px;
-    }
-    
-    .regalos h2 {
-        font-size: 15px;
-        top: 0px;
-        margin-bottom: 25px;
+    /* Reiniciamos la página para que actúe de forma fluida de arriba hacia abajo */
+    .pagina {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
     }
 
+    /* Título elástico sin píxeles duros */
+    .titulo {
+        font-size: 16px !important;
+        margin-top: 10px !important;
+        position: relative !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* Las tortas flotan de forma elástica a los lados del texto */
     .torta {
-        width: 45px;
-        height: 45px;
-        margin-top: -5px;
-        margin-left: 10px;
+        position: relative !important;
+        width: 45px !important;
+        height: 45px !important;
+        margin: 0 10px 0 0 !important;
     }
 
     .torta1 {
-        width: 45px;
-        height: 45px;
-        margin-top: -55px;
-        margin-left: unset;
-        right: 10px;
+        position: relative !important;
+        width: 45px !important;
+        height: 45px !important;
+        margin: 0 0 0 10px !important;
+        top: 0 !important;
     }
 
+    .regalos h2 {
+        font-size: 15px !important;
+        top: 0 !important;
+        margin: 15px 0 !important;
+    }
+
+    /* La caja rosa ahora usa el 95% del ancho de cualquier celular */
     .cubo_fondo, .tapa {
-        width: 92% !important;
-        height: auto !important;
-        min-height: 420px;
-        left: 4% !important;
-        margin-top: 0%;
+        position: absolute !important;
+        width: 95% !important;
+        height: 420px !important; /* Altura controlada para pantallas chicas */
+        left: 2.5% !important;
+        margin-top: 120px !important;
     }
 
+    /* El contenedor interno donde viven los 10 regalos */
     .cubo {
-        width: 90% !important;
-        height: auto !important;
-        min-height: 405px;
-        left: 5% !important;
-        top: 130px !important;
-        padding: 12px;
-        gap: 10px;
+        position: absolute !important;
+        width: 93% !important;
+        height: 405px !important;
+        left: 3.5% !important;
+        top: 127px !important;
+        padding: 10px !important;
+        gap: 8px !important; /* Espacio compacto para que quepan todos */
     }
 
+    /* El moño se escala automáticamente al tamaño de la tapa reducida */
     .moño {
         width: 100% !important;
-        height: auto !important;
-        max-height: 380px;
+        height: 100% !important;
+        object-fit: contain !important;
     }
 
+    /* Los cuadraditos se reducen para formar una cuadrícula limpia de 3 columnas */
     .mini-cuadrado {
-        width: 70px !important;
-        height: 70px !important;
-        font-size: 16px !important;
-        border-radius: 8px;
+        width: 68px !important;
+        height: 68px !important;
+        font-size: 14px !important;
+        border-radius: 8px !important;
     }
 
+    /* El recuadro de la sorpresa final se adapta horizontalmente */
     .regalo-final {
-        width: 85% !important;
-        height: 55px !important;
-        font-size: 11px !important;
+        width: 90% !important;
+        height: 50px !important;
+        font-size: 12px !important;
+        margin-top: 5px !important;
     }
 
+    /* Ventana modal adaptada para que los textos largos no desborden */
     .modal-contenido {
-        width: 85%;
-        padding: 15px;
+        width: 85% !important;
+        max-height: 85vh !important;
+        overflow-y: auto !important; /* Añade scroll si el texto es excesivamente largo */
+        padding: 20px !important;
     }
     
     .modal-contenido img {
-        max-height: 160px;
-        max-width: 160px;
+        max-height: 150px !important;
+        max-width: 150px !important;
     }
     
     .modal-contenido p {
-        font-size: 16px;
+        font-size: 15px !important;
+        line-height: 1.4 !important;
     }
 }
