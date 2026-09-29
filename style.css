@@ -33,14 +33,6 @@ body{
     background-color: rgb(111, 255, 111);
 }
 
-.pagina {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: -0.01%;
-    left: -0.01%;
-}
-
 .titulo {
     text-align: center; 
     font-family: 'StarBorn';
@@ -305,17 +297,6 @@ body{
    MÉTODO INVISIBLE ADAPTATIVO PARA CELULARES
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* Reiniciamos la página para que actúe de forma fluida de arriba hacia abajo */
-    .pagina {
-        position: relative !important;
-        width: 100% !important;
-        height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 10px !important;
-        box-sizing: border-box !important;
-    }
 
     /* Título elástico sin píxeles duros */
     .titulo {
