@@ -310,40 +310,38 @@ body{
         font-size: 14px !important; 
     }
 
-        /* Forzamos el desplazamiento de las tortas hacia abajo */
+       /* 1. Posicionamos las tortas de forma absoluta e independiente sobre el título */
     .torta {
-        position: relative !important;
-        display: inline-block !important;
-        width: 32px !important;  
-        height: 32px !important;
-        top: 0 !important;
-        left: unset !important;
-        right: unset !important;
-        margin: 0 8px 0 0 !important; 
-        /* Rota la imagen y además la empuja 12 píxeles hacia abajo */
-        transform: rotate(-25deg) translateY(12px) !important; 
+        position: absolute !important;
+        display: block !important;
+        width: 35px !important;  
+        height: 35px !important;
+        top: -35px !important;    /* Las sube por encima de la palabra FELIZ */
+        left: 30% !important;     /* La centra hacia la izquierda */
+        margin: 0 !important;
+        transform: rotate(-15deg) !important;
     }
 
     .torta1 {
-        position: relative !important;
-        display: inline-block !important;
-        width: 32px !important;  
-        height: 32px !important;
-        top: 0 !important;
-        left: unset !important;
-        right: unset !important;
-        margin: 0 0 0 8px !important; 
-        /* Rota la imagen y además la empuja 12 píxeles hacia abajo */
-        transform: rotate(25deg) translateY(12px) !important; 
+        position: absolute !important;
+        display: block !important;
+        width: 35px !important;  
+        height: 35px !important;
+        top: -35px !important;    /* Las sube por encima de la palabra CUMPLEAÑOS */
+        right: 30% !important;    /* La centra hacia la derecha */
+        margin: 0 !important;
+        transform: rotate(15deg) !important;
     }
 
+    /* 2. Corregimos el subtítulo para que no se encime con los regalos */
     .regalos h2 {
         position: relative !important;
         width: 100% !important;
         text-align: center !important;
         font-size: 14px !important;
         top: 0 !important;
-        margin: 20px 0 10px 0 !important;
+        margin-top: 30px !important;    /* Empuja el subtítulo hacia abajo para separarlo del título */
+        margin-bottom: 25px !important; /* ¡CLAVE! Empuja la caja rosa hacia abajo para que no tape el texto */
     }
 
     /* Redimensionamos las 3 capas a una altura controlada de 380px para celular */
