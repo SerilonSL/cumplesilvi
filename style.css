@@ -62,7 +62,7 @@ body{
     border-radius: 15px;
 }
 
-/* Contenedor cambiado a Grid para forzar filas exactas y simétricas */
+/* Contenedor optimizado para alinear exactamente 6 arriba y 5 abajo */
 .cubo {
     position: absolute;
     width: 980px;
@@ -71,14 +71,14 @@ body{
     left: 18%;
     top: 17.5%;
     border-radius: 15px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 12px;
-    justify-items: center;
-    align-items: center;
+    justify-content: center;
+    align-content: center;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 20px 30px;
+    max-width: 980px;
 }
 
 .tapa {
@@ -130,6 +130,7 @@ body{
 .mini-cuadrado {
     width: 135px;
     height: 115px;
+    flex: 0 0 calc(16.666% - 12px);
     background-color: #ff477e;
     color: rgb(255, 255, 255);
     font-family: 'StarBorn', sans-serif;
@@ -248,6 +249,7 @@ body{
     display: flex !important;
     width: 135px;
     height: 115px;
+    flex: 0 0 calc(16.666% - 12px);
     background-color: #ff0055;
     color: white;
     font-family: 'StarBorn', sans-serif;
