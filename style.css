@@ -302,28 +302,24 @@ body{
         box-sizing: border-box !important;
     }
 
-        /* 1. Forzamos al título a separarse en dos líneas de forma centrada */
-        /* 1. Mantenemos el título en una sola línea pero reordenamos el flujo interno */
+    /* 1. DISTRIBUCIÓN DEL TÍTULO EN DOS LÍNEAS */
     .titulo {
         position: relative !important;
-        width: 100% !important;
+        width: 220px !important;     /* Ancho justo para obligar a romper después de "FELIZ" */
+        margin: 20px auto 0 auto !important; /* Centra el bloque entero en la pantalla */
         text-align: center !important;
-        margin-top: 15px !important;
-        font-size: 15px !important; 
-        display: block !important;
+        font-size: 14px !important; 
+        line-height: 1.6 !important; /* Separa cómodamente las dos líneas */
     }
 
-    /* 
-       2. LAS TORTAS ESCOLTAN SÓLO LA PALABRA "FELIZ"
-       Cambiamos el método de anclaje para que floten por encima del renglón de CUMPLEAÑOS
-    */
+    /* Las tortas se anclan exactamente a la izquierda y derecha de la primera línea (FELIZ) */
     .torta {
         position: absolute !important;
         display: block !important;
         width: 32px !important;  
         height: 32px !important;
-        top: -5px !important;       /* Altura exacta alineada con la primera línea */
-        left: 20% !important;       /* Posición lateral izquierda fija */
+        top: -5px !important;       /* Alineada con la palabra FELIZ */
+        left: -40px !important;     /* Se posiciona justo a la izquierda */
         margin: 0 !important;
         transform: rotate(-25deg) !important;
     }
@@ -333,37 +329,41 @@ body{
         display: block !important;
         width: 32px !important;  
         height: 32px !important;
-        top: -5px !important;       /* Altura exacta alineada con la primera línea */
-        right: 20% !important;      /* Posición lateral derecha fija */
+        top: -5px !important;       /* Alineada con la palabra FELIZ */
+        right: -40px !important;    /* Se posiciona justo a la derecha */
         margin: 0 !important;
         transform: rotate(25deg) !important;
     }
 
-    /* 
-       3. TEXTO ROJO INTEGRADO DENTRO DE LA CAJA ROSA
-       Lo movemos usando coordenadas absolutas para forzarlo a meterse dentro del cubo
-    */
+    /* 2. TEXTO ROJO INTEGRADO DENTRO DE LA CAJA */
     .regalos h2 {
         position: absolute !important;
         width: 92vw !important;
         text-align: center !important;
         font-size: 13px !important;
         left: 4vw !important;
-        top: 200px !important;      /* Coordenada justa para calzar en la parte superior del marco rosa */
+        top: 170px !important;      /* Posición exacta para que quede adentro del borde superior */
         margin: 0 !important;
-        z-index: 10 !important;     /* Garantiza que esté siempre visible */
+        z-index: 10 !important;     /* Lo mantiene visible sobre los fondos */
     }
 
-    /* 
-       4. AJUSTE DE LA CAJA (Le damos un espacio arriba para el letrero rojo)
-    */
+    /* 3. SINCRONIZACIÓN PERFECTA DE LAS 3 CAPAS (FONDO, INTERIOR Y TAPA) */
+    .cubo_fondo {
+        position: absolute !important;
+        width: 92vw !important;
+        height: 400px !important;   /* Altura calibrada para los números y el texto superior */
+        left: 4vw !important;
+        top: 155px !important;      /* TODAS las capas se clavan fijas en 155px */
+        margin-top: 0 !important;
+    }
+
     .cubo {
         position: absolute !important;
         width: 92vw !important;
-        height: 380px !important;
+        height: 400px !important;
         left: 4vw !important;
-        top: 185px !important;   
-        padding: 40px 15px 15px 15px !important; /* El padding-top de 40px deja libre el área del texto rojo */
+        top: 155px !important;      /* Sincronizado exactamente en 155px */
+        padding: 50px 12px 12px 12px !important; /* 50px de espacio arriba para no tapar el texto rojo */
         gap: 10px !important; 
         display: flex !important;
         flex-wrap: wrap !important;
@@ -375,10 +375,11 @@ body{
     .tapa {
         position: absolute !important;
         width: 92vw !important;
-        height: 380px !important;
+        height: 400px !important;
         left: 4vw !important;
-        top: 185px !important;   /* Bajamos la tapa en perfecta sincronía */
+        top: 155px !important;      /* Sincronizado exactamente en 155px */
         margin-top: 0 !important;
+        z-index: 2 !important;
     }
 
     .moño {
@@ -390,6 +391,7 @@ body{
         object-fit: contain !important; 
     }
 
+    /* 4. CUADRADITOS Y MENSAJE FINAL */
     .mini-cuadrado {
         width: 62px !important; 
         height: 62px !important;
@@ -399,11 +401,12 @@ body{
 
     .regalo-final {
         width: 85% !important;
-        height: 48px !important;
+        height: 45px !important;
         font-size: 11px !important;
         margin-top: 5px !important;
     }
 
+    /* Ventana emergente modal */
     .modal-contenido {
         width: 85% !important;
         max-height: 80vh !important;
