@@ -339,7 +339,7 @@ body{
         margin: 20px 0 10px 0 !important;
     }
 
-    /* Forzamos a las 3 capas a tener exactamente el mismo molde simétrico */
+    /* Redimensionamos las 3 capas a una altura controlada de 380px para celular */
     .cubo_fondo {
         position: absolute !important;
         width: 92vw !important;
@@ -383,7 +383,7 @@ body{
     }
 
     .mini-cuadrado {
-        width: 62px !important; /* Un poco más pequeños para evitar cualquier desborde */
+        width: 62px !important; 
         height: 62px !important;
         font-size: 16px !important;
         border-radius: 8px !important;
